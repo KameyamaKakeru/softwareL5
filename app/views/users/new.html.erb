@@ -1,11 +1,15 @@
-<%= form_with model: @user do |f| %>
+<%= form_with model: @user, local: true do |f| %>
   <p>
     <%= f.label :uid, 'UID' %>
     <%= f.text_field :uid %>
   </p>
   <p>
-    <%= f.label :pass, 'PASS' %>
-    <%= f.text_field :pass %>
+    <%= f.label :pass, 'パスワード' %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, 'パスワード(確認)' %>
+    <%= f.password_field :password_confirmation %>
   </p>
   <%= f.submit '登録' %>
 <% end %>
